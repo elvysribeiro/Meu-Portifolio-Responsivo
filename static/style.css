@@ -128,6 +128,7 @@ section#inicio div#arraste a {
 i.menu-mobile {
     position: fixed;
     color:#ffffff;
+    background-color: #32333723;
     right: 1rem;
     top: 1rem;
     font-size: 1.5rem;
@@ -170,7 +171,7 @@ i.menu-mobile {
     }
 }
 *::-webkit-scrollbar {
-    width: 10px;
+    width: 12px;
 }
 
 *::-webkit-scrollbar-track {
@@ -181,6 +182,11 @@ i.menu-mobile {
 
 *::-webkit-scrollbar-thumb {
     background-color: #19191af3;
+    border-radius: 50px;
+}
+
+.section-bg{
+  background-color: #eff5ff; 
 }
 
 
