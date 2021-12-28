@@ -1,8 +1,6 @@
 from flask import Flask, render_template, redirect, request, flash
 from flask_mail import Mail, Message
-from confg import email, senha
-
-
+from config import email,senha
 
 app = Flask(__name__)
 app.secret_key = 'devweb'
@@ -12,8 +10,8 @@ mail_settings = {
     "MAIL_PORT": 465,
     "MAIL_USE_TLS": False,
     "MAIL_USE_SSL": True,
-    "MAIL_USERNAME": email,
-    "MAIL_PASSWORD": senha
+    "MAIL_USERNAME": ("EMAIL"),
+    "MAIL_PASSWORD": ("SENHA")
 }
 
 app.config.update(mail_settings)
@@ -41,7 +39,7 @@ def send():
         msg = Message(
             subject = f'{formContato.nome} te enviou uma mensagem no portfólio',
             sender = app.config.get("MAIL_USERNAME"),
-            recipients= ['elvyssribeiro@gmail.com', app.config.get("MAIL_USERNAME")],
+            recipients= ["elvys330@gmail.com", app.config.get("MAIL_USERNAME")],
             body = f'''
             
             {formContato.nome} com o e-mail {formContato.email}, te enviou a seguinte mensagem:
