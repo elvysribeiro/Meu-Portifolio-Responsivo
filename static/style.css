@@ -298,7 +298,7 @@ i.menu-mobile {
     bottom: 0;
     width: 300px;
     z-index: 9999;
-    background-color: #153866;
+    background-color: #19191af3;
     transition: .3s;
   }
   
