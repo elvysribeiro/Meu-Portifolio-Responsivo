@@ -10,55 +10,53 @@ menuMobile.addEventListener("click", () => {
   body.classList.toggle("menu-nav-active");
 });
 
-
 /* fecha o menu quando clicar em algum item e muda o icone para list */
 
-const navItem = document.querySelectorAll(".nav-item")
+const navItem = document.querySelectorAll(".nav-item");
 
-navItem.forEach(item => {
+navItem.forEach((item) => {
   item.addEventListener("click", () => {
-    if (body.classList.contains("menu-nav-active")){
-      body.classList.remove("menu-nav-active")
-      menuMobile.classList.replace("bi-x", "bi-list")
+    if (body.classList.contains("menu-nav-active")) {
+      body.classList.remove("menu-nav-active");
+      menuMobile.classList.replace("bi-x", "bi-list");
     }
-  })
-})
+  });
+});
 //Animar todos os itens na tela que tiverem meu atributo data-anime
 
 const item = document.querySelectorAll("[data-anime]");
 
-const animeScroll = () =>{
-  const windowTop = window.pageYOffset + window.innerHeight * 0.85 ;
-  console.log(windowTop)
+const animeScroll = () => {
+  const windowTop = window.pageYOffset + window.innerHeight * 0.85;
+  console.log(windowTop);
 
-  item.forEach(element =>{
-    if (windowTop > element.offsetTop){
+  item.forEach((element) => {
+    if (windowTop > element.offsetTop) {
       element.classList.add("animate");
-    } else{
+    } else {
       element.classList.remove("animate");
     }
   });
-
 };
 
 animeScroll();
 
-window.addEventListener("scroll", ()=>{
+window.addEventListener("scroll", () => {
   animeScroll();
-})
+});
 
 // Ativar carregamento no botão de enviar formulário para
 
-const btnEnviar = document.querySelector('#btn-enviar')
-const btnEnviarLoader = document.querySelector('#btn-enviar-loader')
+const btnEnviar = document.querySelector("#btn-enviar");
+const btnEnviarLoader = document.querySelector("#btn-enviar-loader");
 
-btnEnviar.addEventListener("click", ()=>{
+btnEnviar.addEventListener("click", () => {
   btnEnviarLoader.style.display = "block";
-  btnEnviar.style.display = "none"
-})
+  btnEnviar.style.display = "none";
+});
 
 // Tira a mensagem de sucesso depois de 5 segundos
 
 setTimeout(() => {
-  document.querySelector('#alerta').style.display = 'none';
-}, 5000)
+  document.querySelector("#alerta").style.display = "none";
+}, 5000);
